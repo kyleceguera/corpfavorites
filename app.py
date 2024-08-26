@@ -1,12 +1,16 @@
 import streamlit as st
 import pandas as pd
 
-# Load CSV data
 @st.cache_data
 def load_data():
-    data = pd.read_csv('path/to/WW Res Numbers.csv')
-    return data
-
+    file_path = 'WW Res Numbers.csv'
+    if os.path.exists(file_path):
+        data = pd.read_csv(file_path)
+        return data
+    else:
+        st.error(f"File not found: {file_path}")
+        return pd.DataFrame()  # Return an empty DataFrame if file not found
+        
 # Streamlit app
 def main():
 
