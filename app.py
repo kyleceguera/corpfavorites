@@ -4,7 +4,7 @@ import pandas as pd
 # Load CSV data
 @st.cache_data
 def load_data():
-    data = pd.read_csv(r'C:\Users\kyle.ceguera\OneDrive - TTC\Desktop\Genesys PoCs\CorporateFavorites\WW Res Numbers.csv')  
+    data = pd.read_csv('path/to/WW Res Numbers.csv')
     return data
 
 # Streamlit app
